@@ -1,0 +1,12 @@
+{
+  "name": "equinox-bank",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Backend de la banque: authentification, autorités de signature, règles, audit.",
+  "scripts": {
+    "start": "node src/index.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": { "node": ">=22.13" }
+}

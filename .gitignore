@@ -1,0 +1,11 @@
+node_modules
+dist
+.env
+.env.*
+!.env.example
+*.log
+
+# Documents privés (PRD, recherche, compliance): jamais sur GitHub
+private-docs/
+
+.vite

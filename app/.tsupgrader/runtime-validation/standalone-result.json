@@ -1,0 +1,100 @@
+{
+  "planHash": "4101d34f7f035045fa3aa1940d418386b0beb4a577e502cf2d61e2501c59fbe6",
+  "phase": "standalone",
+  "recordedAtUtc": "2026-11-05T20:09:14.8705008Z",
+  "retryCount": 0,
+  "resetBaseline": false,
+  "complete": true,
+  "result": {
+    "setupSucceeded": true,
+    "setupDurationMs": 0,
+    "setupFailureOutput": null,
+    "assertions": [
+      {
+        "name": "production-build",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": false,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 2,
+        "outputSample": "\r\n\u003E equinox@0.0.0 build\r\n\u003E tsc -b \u0026\u0026 vite build\r\n\r\nsrc/proof/bitcoin.ts(75,54): error TS2580: Cannot find name \u0027Buffer\u0027. Do you need to install type definitions for node? Try \u0060npm i --save-dev @types/node\u0060.\r\nsrc/proof/bitcoin.ts(81,20): error TS2580: Cannot find name \u0027Buffer\u0027. Do you need to install type definitions for node? Try \u0060npm i --save-dev @types/node\u0060.\r\nsrc/proof/bitcoin.ts(81,83): error TS2580: Cannot find name \u0027Buffer\u0027. Do you need to install type definitions for node? Try \u0060npm i --save-dev @types/node\u0060.\r\nsrc/proof/bitcoin.ts(82,21): error TS2580: Cannot find name \u0027Buffer\u0027. Do you need to install type definitions for node? Try \u0060npm i --save-dev @types/node\u0060.\r\nsrc/proof/bitcoin.ts(91,74): error TS2580: Cannot find name \u0027Buffer\u0027. Do you need to install type definitions for node? Try \u0060npm i --save-dev @types/node\u0060.\r\n",
+        "durationMs": 10240
+      },
+      {
+        "name": "tests-pass",
+        "kind": "process",
+        "verificationMethod": "test-results",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\r\n\u003E equinox@0.0.0 test\r\n\u003E vitest run\r\n\r\n\r\n\u001B[1m\u001B[46m RUN \u001B[49m\u001B[22m \u001B[36mv3.2.7 \u001B[39m\u001B[90mC:/Hackathons/THE EPFL/creeps-main/app\u001B[39m\r\n\r\n \u001B[32m\u2713\u001B[39m src/access/flows.test.ts \u001B[2m(\u001B[22m\u001B[2m29 tests\u001B[22m\u001B[2m)\u001B[22m\u001B[32m 87\u001B[2mms\u001B[22m\u001B[39m\r\n \u001B[32m\u2713\u001B[39m src/proof/verify.test.ts \u001B[2m(\u001B[22m\u001B[2m6 tests\u001B[22m\u001B[2m)\u001B[22m\u001B[33m 477\u001B[2mms\u001B[22m\u001B[39m\r\n \u001B[32m\u2713\u001B[39m src/App.test.tsx \u001B[2m(\u001B[22m\u001B[2m20 tests\u001B[22m\u001B[2m)\u001B[22m\u001B[33m 14151\u001B[2mms\u001B[22m\u001B[39m\r\n   \u001B[33m\u001B[2m\u2713\u001B[22m\u001B[39m vue d\u0027ensemble\u001B[2m \u003E \u001B[22mmontre les trois wallets avec leurs vrais soldes, et l\u0027activit\u00E9 r\u00E9cente \u001B[33m 1238\u001B[2mms\u001B[22m\u001B[39m\r\n   \u001B[33m\u001B[2m\u2713\u001B[22m\u001B[39m envoi\u001B[2m \u003E \u001B[22mkeeps the recipient fixed and prevents editing it \u001B[33m 705\u001B[2mms\u001B[22m\u001B[39m\r\n   \u001B[33m\u001B[2m\u2713\u001B[22m\u001B[39m envoi\u001B[2m \u003E \u001B[22mcontr\u00F4le de la banque, confirmation par passkey, signature, compte rendu \u00E0 la banque \u001B[33m 1279\u001B[2mms\u001B[22m\u001B[39m\r\n   \u001B[33m\u001B[2m\u2713\u001B[22m\u001B[39m envoi\u001B[2m \u003E \u001B[22mun montant au-dessus du plafond est refus\u00E9 avec le motif, m\u00EAme si le solde le permet \u001B[33m 897\u001B[2mms\u001B[22m\u001B[39m\r\n   \u001B[33m\u001B[2m\u2713\u001B[22m\u001B[39m envoi\u001B[2m \u003E \u001B[22mn\u0027autorise pas \u00E0 demander \u00E0 la banque quand le solde ne couvre pas le montant et les frais \u001B[33m 632\u001B[2mms\u001B[22m\u001B[39m\r\n   \u001B[33m\u001B[2m\u2713\u001B[22m\u001B[39m envoi\u001B[2m \u003E \u001B[22msans passkey, la banque redemande le mot de passe dans une fen\u00EAtre d\u00E9di\u00E9e, puis la signature est autoris\u00E9e \u001B[33m 1317\u001B[2mms\u001B[22m\u001B[39m\r\n   \u001B[33m\u001B[2m\u2713\u001B[22m\u001B[39m envoi\u001B[2m \u003E \u001B[22mun passkey refus\u00E9 \u00E0 la confirmation n\u0027engage rien: rien n\u0027est sign\u00E9, la d\u00E9cision de la banque reste valable, on r\u00E9essaie \u001B[33m 1119\u001B[2mms\u001B[22m\u001B[39m\r\n   \u001B[33m\u001B[2m\u2713\u001B[22m\u001B[39m envoi\u001B[2m \u003E \u001B[22mune signature qui \u00E9choue est rapport\u00E9e \u00E0 la banque et affich\u00E9e, sans faux succ\u00E8s \u001B[33m 791\u001B[2mms\u001B[22m\u001B[39m\r\n   \u001B[33m\u001B[2m\u2713\u001B[22m\u001B[39m historique\u001B[2m \u003E \u001B[22mr\u00E9unit les transactions des trois r\u00E9seaux et se filtre \u001B[33m 628\u001B[2mms\u001B[22m\u001B[39m\r\n   \u001B[33m\u001B[2m\u2713\u001B[22m\u001B[39m s\u00E9curit\u00E9\u001B[2m \u003E \u001B[22mla liste montre les passkeys de la banque, avec leur nature; un seul passkey: conseil d\u0027en ajouter un \u001B[33m 742\u001B[2mms\u001B[22m\u001B[39m\r\n   \u001B[33m\u001B[2m\u2713\u001B[22m\u001B[39m s\u00E9curit\u00E9\u001B[2m \u003E \u001B[22majouter un passkey sur un appareil qui n\u0027en a pas: la banque impose son d\u00E9lai de s\u00E9curit\u00E9, annulable \u001B[33m 820\u001B[2mms\u001B[22m\u001B[39m\r\n   \u001B[33m\u001B[2m\u2713\u001B[22m\u001B[39m s\u00E9curit\u00E9\u001B[2m \u003E \u001B[22mretirer un passkey demande un passkey \u00E0 l\u0027instant; le dernier ne peut pas \u00EAtre retir\u00E9 \u001B[33m 1163\u001B[2mms\u001B[22m\u001B[39m\r\n   \u001B[33m\u001B[2m\u2713\u001B[22m\u001B[39m offline simulation\u001B[2m \u003E \u001B[22mstates that wallet data is simulated and does not offer fake key export or signatures \u001B[33m 464\u001B[2mms\u001B[22m\u001B[39m\r\n   \u001B[33m\u001B[2m\u2713\u001B[22m\u001B[39m r\u00E8gles de la banque et audit\u001B[2m \u003E \u001B[22mcharge la politique du serveur, l\u0027enregistre c\u00F4t\u00E9 serveur, affiche un audit v\u00E9rifi\u00E9 \u001B[33m 868\u001B[2mms\u001B[22m\u001B[39m\r\n   \u001B[33m\u001B[2m\u2713\u001B[22m\u001B[39m r\u00E8gles de la banque et audit\u001B[2m \u003E \u001B[22mune limite invalide bloque l\u0027enregistrement \u001B[33m 841\u001B[2mms\u001B[22m\u001B[39m\r\n\r\n\u001B[2m Test Files \u001B[22m \u001B[1m\u001B[32m3 passed\u001B[39m\u001B[22m\u001B[90m (3)\u001B[39m\r\n\u001B[2m      Tests \u001B[22m \u001B[1m\u001B[32m55 passed\u001B[39m\u001B[22m\u001B[90m (55)\u001B[39m\r\n\u001B[2m   Start at \u001B[22m 21:08:51\r\n\u001B[2m   Duration \u001B[22m 21.91s\u001B[2m (transform 1.56s, setup 0ms, collect 6.85s, tests 14.71s, environment 2.58s, prepare 1.17s)\u001B[22m\r\n\r\n",
+        "durationMs": 24990,
+        "testResults": {
+          "testFramework": "vitest",
+          "runnerDetectedFrom": "package_json",
+          "testsTotal": 55,
+          "testsPassed": 55,
+          "testsFailed": 0,
+          "testsSkipped": 0,
+          "parseFailed": false
+        }
+      },
+      {
+        "name": "dev-server-home-200",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 200\n\u003C!doctype html\u003E\n\u003Chtml lang=\u0022en\u0022\u003E\n  \u003Chead\u003E\n    \u003Cscript type=\u0022module\u0022\u003Eimport { injectIntoGlobalHook } from \u0022/@react-refresh\u0022;\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () =\u003E {};\nwindow.$RefreshSig$ = () =\u003E (type) =\u003E type;\u003C/script\u003E\n\n    \u003Cscript type=\u0022module\u0022 src=\u0022/@vite/client\u0022\u003E\u003C/script\u003E\n\n    \u003Cmeta charset=\u0022UTF-8\u0022 /\u003E\n    \u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1.0, viewport-fit=cover\u0022 /\u003E\n    \u003Cmeta name=\u0022theme-color\u0022 content=\u0022#ffffff\u0022 /\u003E\n    \u003Cmeta name=\u0022color-scheme\u0022 content=\u0022light\u0022 /\u003E\n    \u003Cmeta\n      http-equiv=\u0022Content-Security-Policy\u0022\n      content=\u0022default-src \u0027self\u0027; script-src \u0027self\u0027; style-src \u0027self\u0027 \u0027unsafe-inline\u0027; img-src \u0027self\u0027 data:; font-src \u0027self\u0027; connect-src \u0027self\u0027 ws://localhost:5173 ws://127.0.0.1:5173; form-action \u0027self\u0027; base-uri \u0027self\u0027; object-src \u0027none\u0027\u0022\n    /\u003E\n    \u003Clink rel=\u0022icon\u0022 type=\u0022image/png\u0022 href=\u0022/favicon.png\u0022 /\u003E\n    \u003Ctitle\u003EEquinox\u003C/title\u003E\n  \u003C/head\u003E\n  \u003Cbody\u003E\n    \u003Cdiv id=\u0022root\u0022\u003E\u003C/div\u003E\n    \u003Cscript type=\u0022module\u0022 src=\u0022/src/main.tsx\u0022\u003E\u003C/script\u003E\n  \u003C/body\u003E\n\u003C/html\u003E\n\n--- server output ---\n\r\n\u003E equinox@0.0.0 dev\r\n\u003E vite --host 127.0.0.1\r\n\r\n\r\n  \u001B[32m\u001B[1mVITE\u001B[22m v6.4.4\u001B[39m  \u001B[2mready in \u001B[0m\u001B[1m414\u001B[22m\u001B[2m\u001B[0m ms\u001B[22m\r\n\r\n  \u001B[32m\u279C\u001B[39m  \u001B[1mLocal\u001B[22m:   \u001B[36mhttp://127.0.0.1:\u001B[1m5173\u001B[22m/\u001B[39m\r\n",
+        "durationMs": 1044
+      }
+    ],
+    "executions": [
+      {
+        "source": "production-build",
+        "resolvedExecutable": "C:\\nvm4w\\nodejs\\npm.CMD",
+        "args": [
+          "run",
+          "build"
+        ],
+        "cwd": "C:\\Hackathons\\THE EPFL\\creeps-main\\app",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "tests-pass",
+        "resolvedExecutable": "C:\\nvm4w\\nodejs\\npm.CMD",
+        "args": [
+          "test"
+        ],
+        "cwd": "C:\\Hackathons\\THE EPFL\\creeps-main\\app",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "dev-server-home-200",
+        "resolvedExecutable": "C:\\nvm4w\\nodejs\\npm.CMD",
+        "args": [
+          "run",
+          "dev",
+          "--",
+          "--host",
+          "127.0.0.1"
+        ],
+        "cwd": "C:\\Hackathons\\THE EPFL\\creeps-main\\app",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      }
+    ]
+  }
+}

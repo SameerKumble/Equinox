@@ -1,0 +1,48 @@
+# Déploiement du backend de la banque.
+#
+# - L'API écoute sur le réseau du proxy HTTPS (port 8787), sans aucun port publié sur la machine: seul le proxy la joint, et il
+#   ne doit relayer que /api. Elle écoute aussi sur un socket Unix (./run/api.sock, droits 0600) pour l'administration par
+#   tunnel SSH.
+# - Le JWKS (clé PUBLIQUE de signature) écoute sur le même réseau (port 8788). Le proxy ne doit relayer que
+#   /.well-known/jwks.json.
+# - La clé privée de signature est créée au premier démarrage, dans ./data, et ne quitte jamais la machine.
+services:
+  bank:
+    build: .
+    container_name: equinox-bank
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      BANK_DATA_DIR: /data
+      BANK_API_SOCKET: /run/bank/api.sock
+      BANK_API_PORT: "8787"
+      BANK_API_HOST: 0.0.0.0
+      BANK_JWKS_HOST: 0.0.0.0
+      # Le proxy est seul à joindre l'API: l'adresse du client est la dernière valeur de X-Forwarded-For.
+      BANK_TRUST_PROXY: "1"
+    user: "1000:1000"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 256m
+    cpus: 1
+    pids_limit: 100
+    tmpfs: ["/tmp"]
+    volumes:
+      - ./data:/data
+      - ./run:/run/bank
+    networks: [proxy]
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "Promise.all(['8787/api/health','8788/.well-known/jwks.json'].map((p)=>fetch('http://127.0.0.1:'+p))).then((r)=>process.exit(r.every((x)=>x.ok)?0:1),()=>process.exit(1))"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+networks:
+  proxy:
+    name: caddy
+    external: true
