@@ -1,6 +1,6 @@
-# equinox
+# Equinox
 
-Equinox is an offline wallet simulation. Accounts, passkeys, balances, policies, and simulated transfers use the local browser and local service only. The app does not contact a bank, blockchain, wallet provider, explorer, or other internet service. It does not create real private keys or broadcast transactions.
+Equinox is an offline wallet simulation of a bank product for customer's ownership of keys. Accounts, passkeys, balances, policies, and simulated transfers use the local browser and local service only. The app does not contact a bank, blockchain, wallet provider, explorer, or other internet service. It does not create real private keys or broadcast transactions.
 
 ## Run locally
 
